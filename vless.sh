@@ -4,12 +4,12 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	bhoikfostyahya
-# //	Dscription: Xray Menu Management
-# //	email: admin@bhoikfostyahya.com
-# //  telegram: https://t.me/bhoikfost_yahya
+# //	Author:	Julak Bantur
+# //	Dscription: Xray Menu
+# //	email: putrameratus2@gmail.com
+# //  telegram: https://t.me/Cibut2d
 # //====================================================
-# // font color configuration | BHOIKFOST YAHYA AUTOSCRIPT
+# // font color configuration | JULAK BANTUR AUTOSCRIPT
 colornow=$(cat /etc/julak/theme/color.conf)
 NC="\e[0m"
 RED="\033[0;31m"
