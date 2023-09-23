@@ -15,6 +15,8 @@ red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 #########################
 
 clear
+cd
+
 yellow "Add Domain for Ssh/vmess/vless/trojan dll"
 echo " "
 echo -e "$green      Please select a domain type below               $NC"
@@ -56,3 +58,4 @@ echo -e "Random Nsdomain/Nsdomain is used"
 wget https://raw.githubusercontent.com/bagusid93/sc3/main/slowdns/ns-domain.sh && chmod +x ns-domain.sh && ./ns-domain.sh
 rm -f /root/ns-domain.sh
 fi
+rm -f /root/dns.sh
