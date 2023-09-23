@@ -269,7 +269,7 @@ EOF
 
 #install ssh
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green        Install Kalimut Bur....          $NC"
+echo -e "$green    Install Kalimut Bur....          $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
 sleep 2
@@ -277,7 +277,7 @@ wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB5/julak-bantur.s
 clear
 #Install Nginx Ssl
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green        Install Bulu Bur.....           $NC"
+echo -e "$green    Install Bulu Bur.....           $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
 sleep 2
@@ -285,7 +285,7 @@ wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB3/nginx-ssl.sh &
 clear
 #install Backup
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green         Install Luang Bur....          $NC"
+echo -e "$green     Install Luang Bur....          $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
 sleep 2
@@ -293,7 +293,7 @@ wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB2/set-br.sh &&  
 clear
 #Instal Xray
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green         Install Barang Bagus              $NC"
+echo -e "$green     Install Barang Bagus              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
 sleep 2
@@ -301,14 +301,14 @@ wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB5/ins-xray.sh &&
 clear
 #install Dropbear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green      Install Janda Pirang                $NC"
+echo -e "$green    Install Janda Pirang                $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
 sleep 2
 wget https://raw.githubusercontent.com/julakhss/julakhss/main/JB1/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
 echo -e "$green      Sabar Broo ...Hampir Selesai               $NC"
-sleep 2
+sleep 3
 
 fun_bar() {
     CMD[0]="$1"
@@ -320,7 +320,7 @@ fun_bar() {
         touch $HOME/fim
     ) >/dev/null 2>&1 &
     tput civis
-    echo -ne "  \033[0;33mSabar Ya\033[1;37m- \033[0;33m["
+    echo -ne "  \033[0;33mTunggu Sebentar\033[1;37m- \033[0;33m["
     while true; do
         for ((i = 0; i < 18; i++)); do
             echo -ne "\033[0;32m#"
@@ -333,7 +333,7 @@ fun_bar() {
         tput dl1
         echo -ne "  \033[0;33mSedang Menginstall\033[1;37m- \033[0;33m["
     done
-    echo -e "\033[0;33m]\033[1;37m -\033[1;32m OKe !\033[1;37m"
+    echo -e "\033[0;33m]\033[1;37m -\033[1;32m OKE !\033[1;37m"
     tput cnorm
 }
 res1() {
@@ -357,7 +357,7 @@ res6() {
 
 clear
 echo -e "\033[0;33m ┌──────────────────────────────────────────┐\033[0m"
-echo -e "\033[0;33m │\033[0m          \033[0;32mINSTALL FILE TAMBAHAN\033[0m          \033[0;33m|\033[0m"
+echo -e "\033[0;33m │\033[0m          \033[0;32mINSTALL FILE TAMBAHAN\033[0m            \033[0;33m|\033[0m"
 echo -e "\033[0;33m └──────────────────────────────────────────┘\033[0m"
 echo -e ""
 echo -e "  \033[1;91m Install Slow Dns\033[1;37m"
@@ -375,21 +375,23 @@ fun_bar 'res6'
 echo -e ""
 sleep 3
 clear
+org=$(curl -s https://ipapi.co/org )
+echo "$org" > /root/.isp
 
 cat> /root/.profile << END
-# ~/.profile: executed by Bourne-compatible login shells.
-
 if [ "$BASH" ]; then
-  if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-  fi
+if [ -f ~/.bashrc ]; then
+. ~/.bashrc
 fi
-
+fi
 mesg n || true
 clear
 menu
 END
 chmod 644 /root/.profile
+
+echo -e "$green      Sedikit Lagi Bro             $NC"
+sleep 3
 
 if [ -f "/root/log-install.txt" ]; then
 rm /root/log-install.txt > /dev/null 2>&1
