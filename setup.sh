@@ -188,22 +188,19 @@ yellow "Add Domain for Ssh/vmess/vless/trojan dll"
 echo " "
 echo -e "$green      Please select a domain type below               $NC"
 echo  ""
-tyblue "    1 : Enter your Subdomain & Nsdomain"
-tyblue "    2 : Use a random Subdomain & Nsdomain"
+tyblue "    1 : Enter your Domain"
+tyblue "    2 : Use a random Domain"
 echo ""
 read -p "   Please select numbers 1-2 or Any Button(Random) : " host
 echo ""
 if [[ $host == "1" ]]; then
-read -rp "Enter Your Domain / masukan domain : " pp
-read -rp "Input ur ns-domain : " -e nsdomen
-echo "IP=$pp" > /var/lib/ipvps.conf
-echo "$pp" > /root/domain
-echo "$pp" > /root/scdomain
-echo "$pp" > /etc/xray/domain
-echo "$pp" > /etc/v2ray/domain
-echo "$pp" > /etc/xray/scdomain
-echo "$nsdomen" > /etc/xray/dns
-echo "$nsdomen" > /root/nsdomain
+read -rp "Enter Your Domain / masukan domain : " julak
+echo "IP=$julak" > /var/lib/ipvps.conf
+echo "$julak" > /root/domain
+echo "$julak" > /root/scdomain
+echo "$julak" > /etc/xray/domain
+echo "$julak" > /etc/v2ray/domain
+echo "$julak" > /etc/xray/scdomain
 echo ""
 elif [[ $host == "2" ]]; then
 #install Domain
@@ -214,11 +211,34 @@ else
 echo -e "Random Subdomain/Domain is used"
 wget https://raw.githubusercontent.com/bagusid93/sc3/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
 rm -f /root/cf.sh
+fi
+clear
+sleep 2
+yellow "Add Nsdomain for Slowdns"
+echo " "
+echo -e "$green      Please select a Nsdomain type below               $NC"
+echo  ""
+tyblue "    1 : Enter your Nsdomain"
+tyblue "    2 : Use a random Nsdomain"
+echo ""
+read -p "   Please select numbers 1-2 or Any Button(Random) : " host
+echo ""
+if [[ $host == "1" ]]; then
+read -rp "Input ur ns-domain : " -e bantur
+echo "$bantur" > /etc/xray/dns
+echo "$bantur" > /root/nsdomain
+echo ""
+elif [[ $host == "2" ]]; then
 #install NameServer
 wget https://raw.githubusercontent.com/bagusid93/sc3/main/slowdns/ns-domain.sh && chmod +x ns-domain.sh && ./ns-domain.sh
 rm -f /root/ns-domain.sh
 clear
+else
+echo -e "Random Nsdomain/Nsdomain is used"
+wget https://raw.githubusercontent.com/bagusid93/sc3/main/slowdns/ns-domain.sh && chmod +x ns-domain.sh && ./ns-domain.sh
+rm -f /root/ns-domain.sh
 fi
+
 cat <<EOF>> /etc/julak/theme/red
 BG : \E[40;1;41m
 TEXT : \033[0;31m
