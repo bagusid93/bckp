@@ -15,10 +15,6 @@ red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 #########################
 
 clear
-cd
-
-yellow "Add Nsdomain for Ssh"
-echo " "
 echo -e "$green      Please select a Nsdomain type below               $NC"
 echo  ""
 tyblue "    1 : Enter your Nsdomain"
